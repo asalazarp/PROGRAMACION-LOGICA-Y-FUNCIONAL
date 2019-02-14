@@ -1,0 +1,27 @@
+package vendedortresventas;
+
+import java.util.Scanner;
+public class Vendedortresventas {
+
+    
+    public static void main(String[] args) {
+       int sueldo,vent1,vent2,vent3,ventotal,comisiontotal,sueldofinal;
+       Scanner teclado=new Scanner(System.in);
+       System.out.println("Dame el sueldo");
+       sueldo=teclado.nextInt();
+       System.out.println("primera venta");
+       vent1=teclado.nextInt();
+       System.out.println("segunda venta");
+       vent2=teclado.nextInt();
+       System.out.println("tercera venta");
+       vent3=teclado.nextInt();
+       comisiontotal=((vent1+vent2+vent3)/100)*10;
+       System.out.println("el total de comision es"+comisiontotal);
+       sueldofinal=comisiontotal+sueldo;
+       System.out.println("el sueldo final del empleado es" +sueldofinal);
+       
+       
+   
+    }
+    
+}
