@@ -1,0 +1,26 @@
+(asdf:load-system :fiveam) ;; O bien con Quicklisp (ql:quickload "fiveam")
+
+(defpackage :fibonacci-test (:use :cl :fiveam))
+(in-package :fibonacci-test)
+(load "fibonacci.lisp")
+
+(def-suite fibonacci-suite :description "Suite de pruebas unitarias")
+(in-suite fibonacci-suite)
+
+(test prueba-fibonacci
+;; (fail "Prueba no implementada")
+      (let ((pruebas '((0 . 0)
+                       (1 . 1)
+                       (2 . 1)
+                       (3 . 2)
+                       (4 . 3)
+                       (5 . 5)
+                       (6 . 8)
+                       (7 . 13)
+                       (8 . 21)
+                       (9 . 34)
+                       (10 . 55)) ))
+        (loop for elem in pruebas do
+              (is (= (fibonacci (car elem)) (cdr elem)))) ))
+
+(run! 'fibonacci-suite)
